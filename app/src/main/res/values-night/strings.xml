@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_Add">추가</string>
+    <string name="btn_Delete">삭제</string>
+    <string name="btn_Show">보기</string>
+</resources>
