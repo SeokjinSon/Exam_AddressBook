@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,6 +13,14 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="@string/title_addressbook"
+            android:textSize="30sp" />
 
         <EditText
             android:id="@+id/edit_Name"
@@ -51,26 +60,39 @@
         <Button
             android:id="@+id/btn_Add"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
             android:layout_weight="1"
             android:onClick="clickFunc"
-            android:text="@string/btn_Add" />
+            android:text="@string/btn_Add"
+            android:textSize="20sp"
+            app:backgroundTint="#959090" />
 
         <Button
             android:id="@+id/btn_Delete"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
             android:layout_weight="1"
             android:onClick="clickFunc"
-            android:text="@string/btn_Delete" />
+            android:text="@string/btn_Delete"
+            android:textSize="20sp"
+            app:backgroundTint="#959090" />
 
         <Button
             android:id="@+id/btn_Show"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
             android:layout_weight="1"
             android:onClick="clickFunc"
-            android:text="@string/btn_Show" />
+            android:text="@string/btn_Show"
+            android:textSize="20sp"
+            app:backgroundTint="#959090" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -78,6 +100,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical">
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -5,5 +5,8 @@
     <string name="btn_Show">보기</string>
     <string name="msg_error">시스템 에러</string>
     <string name="msg_noValue">입력되지 않은 값이 있습니다.</string>
-    <string name="msg_successSave">정상적으로 저장되었습니다.</string>
+    <string name="msg_successSave">정상적으로 저장 되었습니다.</string>
+    <string name="msg_successDelete">정상적으로 삭제 되었습니다.</string>
+    <string name="title_addressbook">Address Book</string>
+    <string name="title_addresslist">Address List</string>
 </resources>

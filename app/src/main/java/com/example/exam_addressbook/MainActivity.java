@@ -2,6 +2,7 @@ package com.example.exam_addressbook;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,9 +20,12 @@ public class MainActivity extends AppCompatActivity {
     private EditText                editName;
     private EditText                editPhone;
     private EditText                editEmail;
+//    private TextView                prevTextView;
     private LinearLayout            showAddressListLayout;
     private int                     clickBtnId;
 
+
+    // 주소록 저장 양식
     public class AddressBook {
         String name;
         String phone;
@@ -45,15 +49,6 @@ public class MainActivity extends AppCompatActivity {
         editPhone =                 findViewById(R.id.edit_Phone);
         editEmail =                 findViewById(R.id.edit_Email);
         clickBtnId =                -1;
-    }
-
-    // -------------------------
-    // -- editText 내 값 초기화 --
-    // -------------------------
-    public void initInputInfo() {
-        editName.setText(null);
-        editPhone.setText(null);
-        editEmail.setText(null);
     }
 
     // -------------------------------------
@@ -114,10 +109,20 @@ public class MainActivity extends AppCompatActivity {
         address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int isSame = clickBtnId;
                 clickBtnId = address.getId();
+                if(isSame == clickBtnId)
+                    address.setBackgroundColor(Color.WHITE);
+                else {
+//                    prevTextView = address;
+//                    prevTextView.setBackgroundColor(Color.WHITE);
+                    address.setBackgroundColor(Color.YELLOW);
+                }
+
                 Log.i(String.valueOf(address.getId()), "클릭했음");
             }
         });
+        // prevTextView = address;
         // set_addressToList(address);
         return address;
     }
@@ -146,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         modify_ViewId();
         addressList.remove(clickBtnId);
+        Toast.makeText(this.getApplicationContext(), R.string.msg_successDelete, Toast.LENGTH_LONG).show();
         clickBtnId = -1;
         show_Address();
     }
@@ -170,7 +176,6 @@ public class MainActivity extends AppCompatActivity {
         showAddressListLayout.removeAllViews();
         if (addressList.size() == 0) {
             Log.i(String.valueOf(addressList.size()), "저장된 주소가 없음");
-
             return;
             // Toast.makeText(this.getApplicationContext(), "주소록이 비었습니다.", Toast.LENGTH_LONG); 안 나옴;
         }
